@@ -2,67 +2,32 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. CUSTOM SVG CURSOR ANIMATION (ILLUMINATI VIBE) ---
+    // --- 1. CUSTOM SVG CURSOR (INVISIBLE-TO-EYE) ---
     const customCursor = document.getElementById('custom-cursor');
     const cursorPath = document.getElementById('cursor-path');
     const cursorPupil = document.getElementById('cursor-pupil');
     const interactiveElements = document.querySelectorAll('a, button, .tilt-element, input, textarea');
 
-    // SVG path data for Triangle and Eye
-    const trianglePath = "M20 5 L35 35 L5 35 Z"; // Simple equilateral triangle
-    const eyePath = "M5 20 C15 10, 25 10, 35 20 C25 30, 15 30, 5 20 Z"; // Eye shape
-
-    // Default state
-    cursorPath.setAttribute('d', trianglePath);
-    cursorPath.setAttribute('fill', 'var(--accent-color-1)');
+    const eyePath = "M5 20 C15 10, 25 10, 35 20 C25 30, 15 30, 5 20 Z";
 
     window.addEventListener('mousemove', (e) => {
-        // Move the SVG container
         customCursor.style.left = `${e.clientX}px`;
         customCursor.style.top = `${e.clientY}px`;
     });
 
     interactiveElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            // Animate path to eye shape
-            const pathAnimation = cursorPath.animate([
-                { d: cursorPath.getAttribute('d'), fill: cursorPath.getAttribute('fill') },
-                { d: eyePath, fill: 'var(--accent-color-2)' }
-            ], { duration: 300, fill: 'forwards', easing: 'ease-out' });
-
-            // Animate pupil in
-            cursorPupil.animate([
-                { r: 0, opacity: 0 },
-                { r: 5, opacity: 1 }
-            ], { duration: 300, fill: 'forwards', easing: 'ease-out' });
-
-            pathAnimation.onfinish = () => {
-                cursorPath.setAttribute('d', eyePath);
-                cursorPath.setAttribute('fill', 'var(--accent-color-2)');
-                cursorPupil.setAttribute('r', 5);
-                cursorPupil.setAttribute('opacity', 1);
-            };
+            // Set the eye shape and color
+            cursorPath.setAttribute('d', eyePath);
+            cursorPath.setAttribute('fill', 'var(--accent-color-2)');
+            cursorPupil.setAttribute('r', 5);
+            // Fade in the cursor
+            customCursor.classList.add('active');
         });
 
         el.addEventListener('mouseleave', () => {
-            // Animate path back to triangle shape
-            const pathAnimation = cursorPath.animate([
-                { d: cursorPath.getAttribute('d'), fill: cursorPath.getAttribute('fill') },
-                { d: trianglePath, fill: 'var(--accent-color-1)' }
-            ], { duration: 300, fill: 'forwards', easing: 'ease-out' });
-
-            // Animate pupil out
-            cursorPupil.animate([
-                { r: cursorPupil.getAttribute('r'), opacity: cursorPupil.getAttribute('opacity') },
-                { r: 0, opacity: 0 }
-            ], { duration: 300, fill: 'forwards', easing: 'ease-out' });
-
-            pathAnimation.onfinish = () => {
-                cursorPath.setAttribute('d', trianglePath);
-                cursorPath.setAttribute('fill', 'var(--accent-color-1)');
-                cursorPupil.setAttribute('r', 0);
-                cursorPupil.setAttribute('opacity', 0);
-            };
+            // Fade out the cursor
+            customCursor.classList.remove('active');
         });
     });
 
@@ -72,13 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('active');
 
-                // Special staggered animation for achievement cards
                 if(entry.target.id === 'achievements') {
                     const cards = document.querySelectorAll('.achievement-card');
                     cards.forEach((card, index) => {
                         setTimeout(() => {
                             card.classList.add('in-view');
-                        }, index * 200); // 200ms delay between each card
+                        }, index * 200);
                     });
                 }
             }
@@ -150,5 +114,4 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         navObserver.observe(section);
     });
-
 });
