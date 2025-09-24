@@ -8,26 +8,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
 </head>
 <body>
+    
     <svg id="custom-cursor" width="40" height="40" viewBox="0 0 40 40">
         <defs>
             <filter id="glow">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
-                <feMerge>
-                    <feMergeNode in="blur"/>
-                    <feMergeNode in="SourceGraphic"/>
-                </feMerge>
+                <feGaussianBlur stdDeviation="2" />
             </filter>
         </defs>
-        <path id="cursor-path" d="M20 5 L35 35 L5 35 Z" fill="var(--accent-color-1)" filter="url(#glow)">
-            <animate attributeName="d" begin="indefinite" dur="0.3s" fill="freeze"/>
-            <animate attributeName="fill" begin="indefinite" dur="0.3s" fill="freeze"/>
-        </path>
-        <circle id="cursor-pupil" cx="20" cy="20" r="0" fill="white" opacity="0">
-            <animate attributeName="r" begin="indefinite" dur="0.3s" fill="freeze"/>
-            <animate attributeName="opacity" begin="indefinite" dur="0.3s" fill="freeze"/>
-        </circle>
+        <path id="cursor-path" d="M20 5 L35 35 L5 35 Z" fill="var(--accent-color-1)" filter="url(#glow)" />
+        <circle id="cursor-pupil" cx="20" cy="20" r="0" fill="white" />
     </svg>
-
 
     <div class="background-shapes">
         <div class="shape shape1"></div>
@@ -61,8 +51,9 @@
         <section id="about" data-nav="About" class="reveal">
             <div class="section-content">
                 <h2>About Me 🚀</h2>
+                <img src="https://placehold.co/150x150" alt="A photo of G.V.S Prudhvi Raj" class="profile-image">
                 <p>
-                    Hi there! I'm a first-year B.Tech student with a deep curiosity for how things work, whether it's lines of code or the mechanics of a drone. I see technology as a playground for creativity, from developing fun games to building smart Arduino projects. As the Chief of my university's Hack Club, I'm passionate about building a community of builders and innovators. When I'm not programming, I'm exploring the world through a camera lens. Welcome to my corner of the web!
+                    Hi there! I'm a first-year B.Tech student with a deep curiosity for how things work...
                 </p>
             </div>
         </section>
@@ -146,7 +137,7 @@
             </div>
         </section>
     </main>
-
+    
     <footer>
         <p>© 2025 G.V.S Prudhvi Raj | Exploring the world through code and a camera lens.</p>
     </footer>
