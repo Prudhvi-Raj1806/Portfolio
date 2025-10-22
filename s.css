@@ -1,4 +1,4 @@
-/* s.css - V8 Final Polish Edition */
+/* s.css - V8 Final Polish Edition (Enhanced) */
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Fira+Code:wght@400;600&display=swap');
 
@@ -10,14 +10,14 @@
     --text-color: #e0e0e0;
     --heading-font: 'Fira Code', monospace;
     --body-font: 'Roboto', sans-serif;
-    --hacker-green: #9000ff;
+    --hacker-green: #00ff41; /* Brighter green */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: none;
+    /* cursor: none; <-- REMOVED */
 }
 
 html {
@@ -32,21 +32,7 @@ body {
     overflow: hidden;
 }
 
-/* --- UPDATED SVG CURSOR STYLES --- */
-#custom-cursor {
-    position: fixed;
-    top: 0;
-    left: 0;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%) scale(0.5);
-    opacity: 0;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-}
-#custom-cursor.active {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-}
+/* --- UPDATED SVG CURSOR STYLES (REMOVED) --- */
 
 /* --- ANIMATED BACKGROUND --- */
 .background-shapes {
@@ -169,15 +155,17 @@ p { font-size: 1.1rem; }
 }
 #about p { max-width: 800px; margin: 0 auto; }
 
-/* --- SKILLS SECTION --- */
-#skills ul {
+/* --- SKILLS & TOOLS SECTIONS --- */
+/* UPDATED TO INCLUDE #tools */
+#skills ul, #tools ul {
     list-style: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
 }
-#skills li {
+/* UPDATED TO INCLUDE #tools */
+#skills li, #tools li {
     background-color: var(--primary-color);
     border: 1px solid var(--primary-color);
     padding: 1rem 1.5rem;
@@ -188,7 +176,7 @@ p { font-size: 1.1rem; }
     gap: 1rem;
     font-size: 1.2rem;
 }
-#skills i { font-size: 2.5rem; }
+#skills i, #tools i { font-size: 2.5rem; } /* UPDATED */
 
 /* --- PROJECTS SECTION --- */
 .project-grid {
@@ -226,6 +214,11 @@ p { font-size: 1.1rem; }
     font-weight: bold;
     font-size: 0.9rem;
 }
+/* Added strong tag styling for project cards */
+.project-card strong {
+    color: var(--hacker-green);
+    font-weight: 600;
+}
 
 /* --- ACHIEVEMENTS SECTION (HORIZONTAL) --- */
 .achievements-grid {
@@ -261,6 +254,28 @@ p { font-size: 1.1rem; }
     font-size: 0.9rem;
 }
 
+/* --- NEW EASTER EGG ANIMATION --- */
+.shake-animation {
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
 
 /* --- CONTACT SECTION --- */
 form { display: flex; flex-direction: column; max-width: 600px; margin: 0 auto; gap: 1rem; }
@@ -306,4 +321,106 @@ footer {
     .project-grid, .achievements-grid {
         grid-template-columns: repeat(1, 1fr);
     }
+}
+
+/* --- EASTER EGG: HACKER MODE --- */
+body.hacker-mode {
+    --accent-color-1: var(--hacker-green);
+    --accent-color-2: var(--hacker-green);
+    --text-color: var(--hacker-green);
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+}
+
+body.hacker-mode nav a.active {
+    color: var(--hacker-green);
+    text-shadow: 0 0 10px var(--hacker-green);
+}
+
+body.hacker-mode .profile-image {
+    border-color: var(--hacker-green);
+    box-shadow: 0 0 20px var(--hacker-green);
+}
+
+body.hacker-mode input:focus, 
+body.hacker-mode textarea:focus {
+    border-color: var(--hacker-green); 
+    box-shadow: 0 0 10px var(--hacker-green);
+}
+
+body.hacker-mode button {
+    background: var(--hacker-green);
+    text-shadow: none;
+}
+
+/* Matrix-style background */
+#matrix-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Behind shapes, in front of bg color */
+    display: none; /* Hidden by default */
+}
+
+body.hacker-mode #matrix-canvas {
+    display: block;
+}
+
+/* Optional: Add scanlines for CRT effect */
+body.hacker-mode::after {
+    content: " ";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(to bottom, rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 4px, 6px 100%;
+    z-index: 1000;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% { opacity: 0.1; }
+  20% { opacity: 1; }
+  40% { opacity: 0.3; }
+  60% { opacity: 0.8; }
+  80% { opacity: 0.2; }
+  100% { opacity: 1; }
+}
+
+/* --- NEW EASTER EGG: H1 GLITCH --- */
+.glitch {
+    position: relative;
+    display: inline-block;
+}
+.glitch-active::before,
+.glitch-active::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--bg-color);
+    overflow: hidden;
+}
+.glitch-active::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--accent-color-2);
+    animation: glitch-anim-1 1s infinite linear alternate-reverse;
+}
+.glitch-active::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--accent-color-1);
+    animation: glitch-anim-2 1s infinite linear alternate-reverse;
+}
+@keyframes glitch-anim-1 {
+    0% { clip-path: inset(10% 0 80% 0); } 100% { clip-path: inset(80% 0 5% 0); }
+}
+@keyframes glitch-anim-2 {
+    0% { clip-path: inset(70% 0 10% 0); } 100% { clip-path: inset(5% 0 90% 0); }
 }
