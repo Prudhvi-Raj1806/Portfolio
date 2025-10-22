@@ -9,16 +9,6 @@
 </head>
 <body>
     
-    <svg id="custom-cursor" width="40" height="40" viewBox="0 0 40 40">
-        <defs>
-            <filter id="glow">
-                <feGaussianBlur stdDeviation="2" />
-            </filter>
-        </defs>
-        <path id="cursor-path" d="M20 5 L35 35 L5 35 Z" fill="var(--accent-color-1)" filter="url(#glow)" />
-        <circle id="cursor-pupil" cx="20" cy="20" r="0" fill="white" />
-    </svg>
-
     <div class="background-shapes">
         <div class="shape shape1"></div>
         <div class="shape shape2"></div>
@@ -26,6 +16,8 @@
         <div class="shape shape4"></div>
         <div class="shape shape5"></div>
     </div>
+    
+    <canvas id="matrix-canvas"></canvas>
 
     <header>
         <nav>
@@ -33,7 +25,7 @@
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#tools">Tools</a></li> <li><a href="#projects">Projects</a></li>
                 <li><a href="#achievements">Achievements</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -43,7 +35,7 @@
     <main>
         <section id="hero" data-nav="Home">
             <div class="section-content">
-                <h1>G.V.S Prudhvi Raj</h1>
+                <h1 id="main-name">G.V.S Prudhvi Raj</h1>
                 <p id="typing-text"></p>
             </div>
         </section>
@@ -51,7 +43,7 @@
         <section id="about" data-nav="About" class="reveal">
             <div class="section-content">
                 <h2>About Me 🚀</h2>
-                <img src="https://placehold.co/150x150" alt="A photo of G.V.S Prudhvi Raj" class="profile-image">
+                <img src="https://placehold.co/150x150" alt="A photo of G.V.S Prudhvi Raj" class="profile-image" id="profile-pic">
                 <p>
                     Hi there! I'm a first-year B.Tech student with a deep curiosity for how things work...
                 </p>
@@ -67,8 +59,18 @@
                     <li class="tilt-element"><i class="devicon-css3-plain colored"></i> CSS</li>
                     <li class="tilt-element"><i class="devicon-javascript-plain colored"></i> JavaScript</li>
                     <li class="tilt-element"><i class="devicon-cplusplus-plain colored"></i> C++</li>
-                    <li class="tilt-element"><i class="devicon-arduino-plain colored"></i> Arduino</li>
+                    </ul>
+            </div>
+        </section>
+        
+        <section id="tools" data-nav="Tools" class="reveal">
+            <div class="section-content">
+                <h2>Tools & Platforms 🛠️</h2>
+                <ul>
                     <li class="tilt-element"><i class="devicon-git-plain colored"></i> Git & GitHub</li>
+                    <li class="tilt-element"><i class="devicon-vscode-plain colored"></i> VS Code</li>
+                    <li class="tilt-element"><i class="devicon-linux-plain colored"></i> Linux</li>
+                    <li class="tilt-element"><i class="devicon-arduino-plain colored"></i> Arduino</li>
                 </ul>
             </div>
         </section>
@@ -79,22 +81,22 @@
                 <div class="project-grid">
                     <article class="project-card tilt-element">
                         <h3>Ping Pong Python</h3>
-                        <p>A classic retro arcade game built from scratch using Python's Pygame library.</p>
+                        <p>A classic arcade game built with the <strong>Pygame</strong> library, demonstrating OOP principles and game loop mechanics.</p>
                         <a href="#">View on GitHub</a>
                     </article>
                     <article class="project-card tilt-element">
                         <h3>Random Number Guesser</h3>
-                        <p>An addictive web-based game built with core HTML, CSS, and JavaScript logic.</p>
+                        <p>A dynamic web app using <strong>JavaScript</strong> to manipulate the DOM and handle user events.</p>
                         <a href="#">View on GitHub</a>
                     </article>
                     <article class="project-card tilt-element">
                         <h3>Squad Site</h3>
-                        <p>A fun, static webpage created to introduce my friends. Focused on HTML and creative CSS.</p>
+                        <p>A static website focused on clean <strong>HTML5</strong> structure and modern <strong>CSS3</strong> (Flexbox & Grid).</p>
                         <a href="#">View on GitHub</a>
                     </article>
                     <article class="project-card tilt-element">
                         <h3>Rock Paper Scissors</h3>
-                        <p>The timeless game brought to life in your browser. Developed using vanilla JavaScript.</p>
+                        <p>The timeless game implemented in <strong>Vanilla JavaScript</strong>, focusing on client-side logic.</p>
                         <a href="#">View on GitHub</a>
                     </article>
                 </div>
@@ -139,7 +141,7 @@
     </main>
     
     <footer>
-        <p>© 2025 G.V.S Prudhvi Raj | Exploring the world through code and a camera lens.</p>
+        <p>© 2025 G.V.S Prudhvi Raj | Building digital solutions, one commit at a time.</p>
     </footer>
 
     <script src="script.js"></script>
