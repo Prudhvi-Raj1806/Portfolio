@@ -4,7 +4,7 @@ import { Points, PointMaterial } from '@react-three/drei';
 import * as random from 'three/examples/jsm/utils/BufferGeometryUtils';
 import * as THREE from 'three';
 import { motion, useScroll, useTransform, useSpring, useMotionValue, useMotionTemplate } from 'framer-motion';
-import { Terminal, Cpu, Network, Award, Code2, Zap, GitBranch, Database, BarChart3, Globe, Layers, ArrowUpRight } from 'lucide-react';
+import { Terminal, Cpu, Network, Award, Code2, Zap, GitBranch, Database, BarChart3, Globe, Layers, ArrowUpRight, Users, Trophy, Settings, Gamepad2, Layout } from 'lucide-react';
 import clsx from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -203,9 +203,7 @@ const Hero = () => {
         </h1>
 
         <p className="text-slate-400 md:text-xl max-w-xl leading-relaxed mb-10">
-          Architecting high-performance digital experiences at the intersection of
-          <span className="text-white font-medium"> Design Engineering</span> and
-          <span className="text-white font-medium"> Deep Tech</span>.
+          <DecodedText text="Technologist | Photographer | Creative Problem-Solver" />
         </p>
 
         <div className="flex gap-4">
@@ -247,107 +245,85 @@ const Experience = () => {
       >
         <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
           <Terminal className="text-emerald-500" />
-          <DecodedText text="Professional_Log" />
+          <DecodedText text="Achievements_Log" />
         </h2>
         <div className="h-px w-full bg-gradient-to-r from-emerald-500/30 to-transparent" />
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
-        {/* Large Cell: Full Stack Role */}
+        {/* Large Cell: Hack Club Chief */}
         <GlintCard className="md:col-span-2 md:row-span-2 p-8 flex flex-col justify-between group">
           <div>
             <div className="flex justify-between items-start mb-4">
-              <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono border border-emerald-500/20">2023 - Present</span>
-              <Code2 className="text-slate-500 group-hover:text-emerald-400 transition-colors" />
+              <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono border border-emerald-500/20">First Year</span>
+              <Users className="text-slate-500 group-hover:text-emerald-400 transition-colors" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-2">Full Stack Developer</h3>
-            <p className="text-emerald-400 font-medium mb-4">E-Cell, Alliance University</p>
+            <h3 className="text-2xl font-bold text-white mb-2">Hack Club Chief</h3>
+            <p className="text-emerald-400 font-medium mb-4">Alliance University</p>
             <ul className="text-slate-400 text-sm space-y-2 list-disc list-inside">
-              <li>Orchestrated MERN stack architecture for scalability.</li>
-              <li>Implemented real-time admin dashboards with Supabase.</li>
-              <li>Optimized frontend performance by 40%.</li>
+              <li>Leading a community of student developers.</li>
+              <li>Organizing hackathons and technical workshops.</li>
+              <li>Foster innovation and peer-to-peer learning.</li>
             </ul>
           </div>
 
-          {/* Live Code Visual */}
-          <div className="mt-6 rounded-lg bg-slate-950/80 p-4 border border-slate-800 font-mono text-xs text-slate-300 overflow-hidden relative">
+          {/* Visual: Community / Network Node */}
+          <div className="mt-6 rounded-lg bg-slate-950/80 p-4 border border-slate-800 font-mono text-xs text-slate-300 overflow-hidden relative min-h-[100px] flex items-center justify-center">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-cyan-500" />
-            <code className="block opacity-70">
-              const stack = ['React', 'Node', 'Mongo'];<br />
-              function deploy() &#123;<br />
-              &nbsp;&nbsp;return stack.map(tech =&#62; optimize(tech));<br />
-              &#125;
-            </code>
+            <div className="flex gap-4 items-center opacity-70">
+              <div className="w-8 h-8 rounded-full border border-emerald-500/50 flex items-center justify-center bg-emerald-500/10"><Terminal size={14} /></div>
+              <div className="h-px w-10 bg-emerald-500/30"></div>
+              <div className="w-10 h-10 rounded-full border-2 border-emerald-400 flex items-center justify-center bg-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.3)]"><Zap size={18} className="text-white" /></div>
+              <div className="h-px w-10 bg-emerald-500/30"></div>
+              <div className="w-8 h-8 rounded-full border border-emerald-500/50 flex items-center justify-center bg-emerald-500/10"><Code2 size={14} /></div>
+            </div>
           </div>
         </GlintCard>
 
-        {/* Medium Cell: Social Lead */}
-        <GlintCard className="md:col-span-2 p-8 flex flex-col">
+        {/* Medium Cell: Ideation Challenge Winner */}
+        <GlintCard className="md:col-span-2 p-8 flex flex-col text-left">
           <div className="flex justify-between items-start">
             <div>
-              <h3 className="text-xl font-bold text-white">Social Media Lead</h3>
-              <p className="text-slate-400 text-sm mt-1">E-Cell, Alliance University</p>
+              <h3 className="text-xl font-bold text-white">Ideation Challenge Winner</h3>
+              <p className="text-slate-400 text-sm mt-1">Founders Vault / Excellencia</p>
             </div>
-            <Network className="text-cyan-400" />
+            <Trophy className="text-yellow-400" />
           </div>
 
           <div className="flex-1 flex items-end mt-4">
             <div className="w-full">
               <div className="flex justify-between text-xs text-slate-500 mb-2 font-mono">
-                <span>GROWTH</span>
-                <span className="text-emerald-400">+240%</span>
+                <span>PROJECT</span>
+                <span className="text-emerald-400">1st Place</span>
               </div>
-              {/* Simple sparkline visual with SVG */}
-              <svg className="w-full h-16 overflow-visible" preserveAspectRatio="none">
-                <motion.path
-                  d="M0,64 C20,50 40,60 60,30 S100,20 120,40 S160,10 200,5"
-                  fill="none"
-                  stroke="#10b981"
-                  strokeWidth="2"
-                  initial={{ pathLength: 0 }}
-                  whileInView={{ pathLength: 1 }}
-                  transition={{ duration: 2, ease: "easeInOut" }}
-                />
-                <defs>
-                  <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity="0.2" />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity="0" />
-                  </linearGradient>
-                </defs>
-                <motion.path
-                  d="M0,64 C20,50 40,60 60,30 S100,20 120,40 S160,10 200,5 V64 H0Z"
-                  fill="url(#gradient)"
-                  stroke="none"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 1, duration: 1 }}
-                />
-              </svg>
+              <div className="text-sm text-slate-300 font-medium">
+                Autonomous Smart Car & Traffic Management System.
+              </div>
             </div>
           </div>
         </GlintCard>
 
-        {/* Small Cell: Excellencia Award */}
+        {/* Small Cell: SIH Hackathon */}
         <GlintCard className="md:col-span-1 p-6 flex flex-col justify-center items-center text-center">
-          <div className="w-12 h-12 bg-yellow-500/10 rounded-full flex items-center justify-center mb-4 border border-yellow-500/20">
-            <Award className="text-yellow-500 animate-pulse" />
+          <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mb-4 border border-blue-500/20">
+            <Award className="text-blue-400" />
           </div>
-          <h4 className="font-bold text-white text-sm">Excellencia Award</h4>
-          <span className="text-xs text-slate-500 mt-2">2024 Recipient</span>
+          <h4 className="font-bold text-white text-sm">SIH Internal</h4>
+          <span className="text-xs text-emerald-400 mt-2 font-mono">2nd Place Secured</span>
         </GlintCard>
 
-        {/* Hardware / Techie Proof */}
+        {/* Hardware / Drone Engineer */}
         <GlintCard className="md:col-span-1 p-6 flex flex-col justify-between">
-          <Cpu className="text-cyan-400 mb-2" />
+          <Settings className="text-cyan-400 mb-2" />
           <div>
-            <h4 className="font-bold text-white text-md">Hardware</h4>
-            <p className="text-xs text-slate-400 mt-1">IoT & Embedded Systems Enthusiast</p>
+            <h4 className="font-bold text-white text-md">Drone Engineer</h4>
+            <p className="text-xs text-slate-400 mt-1">Certified UAV Pilot & Technician</p>
           </div>
           <div className="h-1 w-full bg-slate-800 rounded-full mt-4 overflow-hidden">
             <motion.div
               className="h-full bg-cyan-400"
               initial={{ width: 0 }}
-              whileInView={{ width: '85%' }}
+              whileInView={{ width: '100%' }}
               viewport={{ once: true }}
             />
           </div>
@@ -434,16 +410,79 @@ const HardwareSchematic = () => {
   )
 }
 
+const Projects = () => {
+  const projects = [
+    {
+      title: "Ping Pong Python",
+      desc: "Classic arcade physics engineered from scratch using Pygame. Implements collision detection and game loop architecture.",
+      tech: ["Python", "Pygame", "OOP"],
+      icon: Gamepad2
+    },
+    {
+      title: "Squad Site",
+      desc: "A responsive static web platform showcasing clean UI/UX principles and semantic HTML5 architecture.",
+      tech: ["HTML5", "CSS3", "Responsive"],
+      icon: Layout
+    },
+    {
+      title: "JS Game Suite",
+      desc: "Collection of interactive browser-based games including 'Number Guesser' and 'RPS' demonstrating DOM manipulation mastery.",
+      tech: ["JavaScript", "DOM", "Logic"],
+      icon: Terminal
+    }
+  ];
+
+  return (
+    <section className="py-24 px-6 md:px-24 max-w-7xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        className="mb-16"
+      >
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
+          <Code2 className="text-emerald-500" />
+          <DecodedText text="Project_Directory" />
+        </h2>
+        <div className="h-px w-full bg-gradient-to-r from-emerald-500/30 to-transparent" />
+      </motion.div>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {projects.map((project, i) => (
+          <GlintCard key={i} className="p-6 flex flex-col hover:bg-slate-900/80 transition-all">
+            <div className="flex justify-between items-start mb-4">
+              <div className="p-3 rounded-lg bg-slate-800/50 text-cyan-400">
+                <project.icon size={24} />
+              </div>
+              <ArrowUpRight className="text-slate-600" size={20} />
+            </div>
+
+            <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+            <p className="text-slate-400 text-sm mb-6 flex-1">{project.desc}</p>
+
+            <div className="flex flex-wrap gap-2">
+              {project.tech.map((t, j) => (
+                <span key={j} className="text-[10px] uppercase tracking-wider px-2 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </GlintCard>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 const Skills = () => {
   const skills = [
-    { name: "React", level: "98%", status: "Production Ready", icon: Code2 },
-    { name: "Node.js", level: "92%", status: "Production Ready", icon: Database },
-    { name: "Python", level: "88%", status: "Deployed", icon: Terminal },
-    { name: "Hardware", level: "85%", status: "Prototyping", icon: Cpu },
-    { name: "AI/ML", level: "80%", status: "Training", icon: Layers },
-    { name: "Git", level: "95%", status: "Version Controlled", icon: GitBranch },
-    { name: "Analytics", level: "90%", status: "Tracking", icon: BarChart3 },
-    { name: "Web3", level: "70%", status: "Experimental", icon: Globe },
+    { name: "Python", level: "95%", status: "Core Language", icon: Terminal },
+    { name: "C++", level: "90%", status: "System Level", icon: Code2 },
+    { name: "React", level: "85%", status: "Frontend", icon: Globe },
+    { name: "Node.js", level: "80%", status: "Backend", icon: Database },
+    { name: "Arduino", level: "88%", status: "Embedded", icon: Cpu },
+    { name: "Hardware", level: "85%", status: "Prototyping", icon: Settings },
+    { name: "Git", level: "95%", status: "Version Control", icon: GitBranch },
+    { name: "JavaScript", level: "90%", status: "Web Logic", icon: Layers },
   ];
 
   return (
@@ -509,6 +548,7 @@ function App() {
         <Hero />
         <Experience />
         <HardwareSchematic />
+        <Projects />
         <Skills />
         <Footer />
       </div>
