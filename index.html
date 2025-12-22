@@ -1,150 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G.V.S Prudhvi Raj's Portfolio</title>
-    <link rel="stylesheet" href="s.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prudhvi Raj | Creative Technologist</title>
+  <meta name="description"
+    content="Portfolio of Ganti Venkata Sai Prudhvi Raj - Full Stack Developer & Creative Technologist" />
+  <meta name="theme-color" content="#020617" />
 </head>
+
 <body>
-    
-    <div class="background-shapes">
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
-        <div class="shape shape4"></div>
-        <div class="shape shape5"></div>
-    </div>
-    
-    <canvas id="matrix-canvas"></canvas>
-
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#hero">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#tools">Tools</a></li> <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="hero" data-nav="Home">
-            <div class="section-content">
-                <h1 id="main-name">G.V.S Prudhvi Raj</h1>
-                <p id="typing-text"></p>
-            </div>
-        </section>
-
-        <section id="about" data-nav="About" class="reveal">
-            <div class="section-content">
-                <h2>About Me 🚀</h2>
-                <img src="image.jpg" alt="A photo of G.V.S Prudhvi Raj" class="profile-image" id="profile-pic">
-                <p>
-                    Hi there! I'm a first-year B.Tech student with a deep curiosity for how things work...
-                </p>
-            </div>
-        </section>
-
-        <section id="skills" data-nav="Skills" class="reveal">
-            <div class="section-content">
-                <h2>My Tech Stack 💻</h2>
-                <ul>
-                    <li class="tilt-element"><i class="devicon-python-plain colored"></i> Python</li>
-                    <li class="tilt-element"><i class="devicon-html5-plain colored"></i> HTML</li>
-                    <li class="tilt-element"><i class="devicon-css3-plain colored"></i> CSS</li>
-                    <li class="tilt-element"><i class="devicon-javascript-plain colored"></i> JavaScript</li>
-                    <li class="tilt-element"><i class="devicon-cplusplus-plain colored"></i> C++</li>
-                    </ul>
-            </div>
-        </section>
-        
-        <section id="tools" data-nav="Tools" class="reveal">
-            <div class="section-content">
-                <h2>Tools & Platforms 🛠️</h2>
-                <ul>
-                    <li class="tilt-element"><i class="devicon-git-plain colored"></i> Git & GitHub</li>
-                    <li class="tilt-element"><i class="devicon-vscode-plain colored"></i> VS Code</li>
-                    <li class="tilt-element"><i class="devicon-linux-plain colored"></i> Linux</li>
-                    <li class="tilt-element"><i class="devicon-arduino-plain colored"></i> Arduino</li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="projects" data-nav="Projects" class="reveal">
-             <div class="section-content">
-                <h2>Projects</h2>
-                <div class="project-grid">
-                    <article class="project-card tilt-element">
-                        <h3>Ping Pong Python</h3>
-                        <p>A classic arcade game built with the <strong>Pygame</strong> library, demonstrating OOP principles and game loop mechanics.</p>
-                        <a href="#">View on GitHub</a>
-                    </article>
-                    <article class="project-card tilt-element">
-                        <h3>Random Number Guesser</h3>
-                        <p>A dynamic web app using <strong>JavaScript</strong> to manipulate the DOM and handle user events.</p>
-                        <a href="#">View on GitHub</a>
-                    </article>
-                    <article class="project-card tilt-element">
-                        <h3>Squad Site</h3>
-                        <p>A static website focused on clean <strong>HTML5</strong> structure and modern <strong>CSS3</strong> (Flexbox & Grid).</p>
-                        <a href="#">View on GitHub</a>
-                    </article>
-                    <article class="project-card tilt-element">
-                        <h3>Rock Paper Scissors</h3>
-                        <p>The timeless game implemented in <strong>Vanilla JavaScript</strong>, focusing on client-side logic.</p>
-                        <a href="#">View on GitHub</a>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="achievements" data-nav="Achievements" class="reveal">
-             <div class="section-content">
-                <h2>Achievements 🏆</h2>
-                <div class="achievements-grid">
-                    <div class="achievement-card">
-                        <h3>Hack Club Chief</h3>
-                        <p>Became Chief of Hack Club at Alliance University in my first year.</p>
-                    </div>
-                    <div class="achievement-card">
-                        <h3>Ideation Challenge Winner</h3>
-                        <p>1st Place in the Ecxellencia Ideation Challenge for our Autonomous Smart Car.</p>
-                    </div>
-                    <div class="achievement-card">
-                        <h3>SIH Hackathon</h3>
-                        <p>Secured 2nd Place in our internal Smart India Hackathon (SIH) competition.</p>
-                    </div>
-                    <div class="achievement-card">
-                        <h3>Certified Drone Engineer</h3>
-                        <p>Certified with hands-on experience in UAV technology and flight systems.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" data-nav="Contact" class="reveal">
-            <div class="section-content">
-                <h2>Get In Touch</h2>
-                <form>
-                    <input type="text" id="name" placeholder="Enter your name" required>
-                    <input type="email" id="email" placeholder="Enter your email" required>
-                    <textarea id="message" rows="5" placeholder="Type your message..." required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <p>© 2025 G.V.S Prudhvi Raj | Building digital solutions, one commit at a time.</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
-</html>
 
+</html>
