@@ -252,80 +252,130 @@ const Experience = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-[300px]">
         {/* Large Cell: Hack Club Chief */}
-        <GlintCard className="md:col-span-2 md:row-span-2 p-8 flex flex-col justify-between group">
-          <div>
-            <div className="flex justify-between items-start mb-4">
-              <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono border border-emerald-500/20">First Year</span>
-              <Users className="text-slate-500 group-hover:text-emerald-400 transition-colors" />
-            </div>
+        <GlintCard className="md:col-span-2 md:row-span-2 p-8 flex flex-col group">
+          <div className="flex justify-between items-start mb-6">
+            <span className="px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono border border-emerald-500/20">First Year</span>
+            <Users className="text-slate-500 group-hover:text-emerald-400 transition-colors" />
+          </div>
+
+          <div className="mb-6">
             <h3 className="text-2xl font-bold text-white mb-2">Hack Club Chief</h3>
             <p className="text-emerald-400 font-medium mb-4">Alliance University</p>
-            <ul className="text-slate-400 text-sm space-y-2 list-disc list-inside">
-              <li>Leading a community of student developers.</li>
-              <li>Organizing hackathons and technical workshops.</li>
-              <li>Foster innovation and peer-to-peer learning.</li>
+            <p className="text-slate-400 text-sm leading-relaxed mb-4">
+              Spearheaded the campus technical community, fostering a culture of peer-to-peer learning and open-source collaboration.
+            </p>
+            <ul className="text-slate-400 text-xs space-y-2 list-none">
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Leading a community of student developers.
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Organizing hackathons and technical workshops.
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                Mentoring juniors in Web Dev & IoT.
+              </li>
             </ul>
           </div>
 
-          {/* Visual: Community / Network Node */}
-          <div className="mt-6 rounded-lg bg-slate-950/80 p-4 border border-slate-800 font-mono text-xs text-slate-300 overflow-hidden relative min-h-[100px] flex items-center justify-center">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-emerald-500 to-cyan-500" />
-            <div className="flex gap-4 items-center opacity-70">
-              <div className="w-8 h-8 rounded-full border border-emerald-500/50 flex items-center justify-center bg-emerald-500/10"><Terminal size={14} /></div>
-              <div className="h-px w-10 bg-emerald-500/30"></div>
-              <div className="w-10 h-10 rounded-full border-2 border-emerald-400 flex items-center justify-center bg-emerald-500/20 shadow-[0_0_15px_rgba(16,185,129,0.3)]"><Zap size={18} className="text-white" /></div>
-              <div className="h-px w-10 bg-emerald-500/30"></div>
-              <div className="w-8 h-8 rounded-full border border-emerald-500/50 flex items-center justify-center bg-emerald-500/10"><Code2 size={14} /></div>
+          <div className="mt-auto grid grid-cols-3 gap-4 border-t border-slate-800/50 pt-6">
+            <div className="text-center md:text-left">
+              <div className="text-2xl font-mono font-bold text-white">12+</div>
+              <div className="text-[10px] uppercase tracking-wider text-slate-500 mt-1">Events Hosted</div>
+            </div>
+            <div className="text-center md:text-left">
+              <div className="text-2xl font-mono font-bold text-white">250+</div>
+              <div className="text-[10px] uppercase tracking-wider text-slate-500 mt-1">Active Members</div>
+            </div>
+            <div className="text-center md:text-left">
+              <div className="text-2xl font-mono font-bold text-white">100%</div>
+              <div className="text-[10px] uppercase tracking-wider text-slate-500 mt-1">Growth Rate</div>
             </div>
           </div>
         </GlintCard>
 
         {/* Medium Cell: Ideation Challenge Winner */}
-        <GlintCard className="md:col-span-2 p-8 flex flex-col text-left">
-          <div className="flex justify-between items-start">
-            <div>
-              <h3 className="text-xl font-bold text-white">Ideation Challenge Winner</h3>
-              <p className="text-slate-400 text-sm mt-1">Founders Vault / Excellencia</p>
-            </div>
-            <Trophy className="text-yellow-400" />
+        <GlintCard className="md:col-span-2 p-8 flex flex-col justify-between relative overflow-hidden">
+          <div className="absolute top-0 right-0 p-4 opacity-10">
+            <Trophy size={120} className="text-yellow-400 rotate-12" />
           </div>
 
-          <div className="flex-1 flex items-end mt-4">
-            <div className="w-full">
-              <div className="flex justify-between text-xs text-slate-500 mb-2 font-mono">
-                <span>PROJECT</span>
-                <span className="text-emerald-400">1st Place</span>
+          <div className="relative z-10 flex justify-between items-start">
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <Trophy className="text-yellow-400" size={20} />
+                <span className="text-xs font-mono text-yellow-500 tracking-widest uppercase">Winner - 1st Place</span>
               </div>
-              <div className="text-sm text-slate-300 font-medium">
-                Autonomous Smart Car & Traffic Management System.
+              <h3 className="text-2xl font-bold text-white">Ideation Challenge</h3>
+              <p className="text-slate-400 text-sm mt-1">Founders Vault / Excellencia</p>
+            </div>
+          </div>
+
+          <div className="relative z-10 grid grid-cols-2 gap-8 mt-6">
+            <div>
+              <div className="text-[10px] font-mono text-slate-500 mb-1 uppercase">Project</div>
+              <div className="text-sm font-semibold text-white mb-2">Traffic Command System</div>
+              <p className="text-xs text-slate-400">Autonomous traffic management using IoT sensors and real-time density algorithms.</p>
+            </div>
+            <div>
+              <div className="text-[10px] font-mono text-slate-500 mb-1 uppercase">Key Tech</div>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-slate-800 rounded text-[10px] text-cyan-400 border border-slate-700">IoT</span>
+                <span className="px-2 py-1 bg-slate-800 rounded text-[10px] text-cyan-400 border border-slate-700">Python</span>
+                <span className="px-2 py-1 bg-slate-800 rounded text-[10px] text-cyan-400 border border-slate-700">Cloud</span>
               </div>
             </div>
           </div>
         </GlintCard>
 
         {/* Small Cell: SIH Hackathon */}
-        <GlintCard className="md:col-span-1 p-6 flex flex-col justify-center items-center text-center">
-          <div className="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center mb-4 border border-blue-500/20">
-            <Award className="text-blue-400" />
+        <GlintCard className="md:col-span-1 p-6 flex flex-col justify-between group">
+          <div>
+            <div className="flex justify-between items-start mb-4">
+              <Award className="text-blue-400" />
+              <span className="text-[10px] font-mono text-slate-500">2023</span>
+            </div>
+            <h4 className="font-bold text-white text-lg leading-tight">Smart India Hackathon</h4>
+            <p className="text-xs text-slate-400 mt-2">Internal Hackathon Finalist</p>
           </div>
-          <h4 className="font-bold text-white text-sm">SIH Internal</h4>
-          <span className="text-xs text-emerald-400 mt-2 font-mono">2nd Place Secured</span>
+
+          <div className="mt-4 pt-4 border-t border-slate-800/50">
+            <div className="flex justify-between items-center">
+              <span className="text-xs font-mono text-slate-500">RANK</span>
+              <span className="text-emerald-400 font-bold font-mono">2ND</span>
+            </div>
+          </div>
         </GlintCard>
 
         {/* Hardware / Drone Engineer */}
         <GlintCard className="md:col-span-1 p-6 flex flex-col justify-between">
-          <Settings className="text-cyan-400 mb-2" />
+          <div className="flex justify-between items-start">
+            <Settings className="text-cyan-400" />
+            <div className="h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></div>
+          </div>
+
           <div>
             <h4 className="font-bold text-white text-md">Drone Engineer</h4>
-            <p className="text-xs text-slate-400 mt-1">Certified UAV Pilot & Technician</p>
+            <div className="flex items-center gap-2 mt-2">
+              <span className="px-1.5 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20 text-[10px] text-cyan-400 font-mono">CERTIFIED</span>
+            </div>
           </div>
-          <div className="h-1 w-full bg-slate-800 rounded-full mt-4 overflow-hidden">
-            <motion.div
-              className="h-full bg-cyan-400"
-              initial={{ width: 0 }}
-              whileInView={{ width: '100%' }}
-              viewport={{ once: true }}
-            />
+
+          <div className="mt-4">
+            <div className="flex justify-between text-[10px] text-slate-400 mb-1 font-mono">
+              <span>FLIGHT_LOG</span>
+              <span>500h+</span>
+            </div>
+            <div className="h-1 w-full bg-slate-800 rounded-full overflow-hidden">
+              <motion.div
+                className="h-full bg-cyan-400"
+                initial={{ width: 0 }}
+                whileInView={{ width: '85%' }}
+                viewport={{ once: true }}
+              />
+            </div>
           </div>
         </GlintCard>
       </div>
